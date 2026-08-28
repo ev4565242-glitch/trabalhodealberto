@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-navbar: var(--navbar);
+  --color-navbar-foreground: var(--navbar-foreground);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-muted: var(--sidebar-muted);
+
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+
+  --color-stat-revenue: var(--stat-revenue);
+  --color-stat-sales: var(--stat-sales);
+  --color-stat-satisfaction: var(--stat-satisfaction);
+
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Base dark surfaces */
+  --background: oklch(0.16 0.012 264);
+  --foreground: oklch(0.97 0.005 264);
+
+  --card: oklch(0.21 0.014 264);
+  --card-foreground: oklch(0.97 0.005 264);
+
+  --popover: oklch(0.21 0.014 264);
+  --popover-foreground: oklch(0.97 0.005 264);
+
+  /* Brand accent = electric cyan/blue (tech) */
+  --brand: oklch(0.7 0.16 220);
+  --brand-foreground: oklch(0.16 0.012 264);
+
+  --primary: oklch(0.7 0.16 220);
+  --primary-foreground: oklch(0.16 0.012 264);
+
+  --secondary: oklch(0.27 0.016 264);
+  --secondary-foreground: oklch(0.97 0.005 264);
+
+  --muted: oklch(0.27 0.016 264);
+  --muted-foreground: oklch(0.68 0.015 264);
+
+  --accent: oklch(0.27 0.016 264);
+  --accent-foreground: oklch(0.97 0.005 264);
+
+  --destructive: oklch(0.62 0.21 22);
+
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.7 0.16 220);
+
+  --radius: 0.9rem;
+
+  /* White navbar on top (as requested) */
+  --navbar: oklch(0.99 0.002 264);
+  --navbar-foreground: oklch(0.2 0.015 264);
+
+  /* Dark sidebar on the left */
+  --sidebar: oklch(0.19 0.014 264);
+  --sidebar-foreground: oklch(0.85 0.01 264);
+  --sidebar-accent: oklch(0.7 0.16 220);
+  --sidebar-accent-foreground: oklch(0.16 0.012 264);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-muted: oklch(0.6 0.015 264);
+
+  /* Metric card accent colors */
+  --stat-revenue: oklch(0.72 0.15 155);
+  --stat-sales: oklch(0.72 0.15 255);
+  --stat-satisfaction: oklch(0.78 0.15 70);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
